@@ -1,0 +1,920 @@
+/* user styles */
+
+/* styles are what change the color and sizes of stuff on your site. */
+
+/* these are variables that are being used in the code
+these tended to confuse some people, so I only kept 
+the images as variables */
+
+:root {
+    --header-image: url("./images/wp.jpeg");
+    --body-bg-image: url("https://sadhost.neocities.org/images/tiles/purplesky.gif");
+
+    /* colors */
+    --content: #43256e;
+}
+
+/* if you have the URL of a font, you can set it below */
+/* feel free to delete this if it's not your vibe */
+
+/* this seems like a lot for just one font and I would have to agree 
+but I wanted to include an example of how to include a custom font.
+If you download a font file you can upload it onto your Neocities
+and then link it! Many fonts have separate files for each style
+(bold, italic, etc. T_T) which is why there are so many!
+
+*/
+
+@font-face {
+    font-family: Nunito;
+    src: url("https://sadhost.neocities.org/fonts/Nunito-Regular.ttf");
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url("https://sadhost.neocities.org/fonts/Nunito-Bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url("https://sadhost.neocities.org/fonts/Nunito-Italic.ttf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url("https://sadhost.neocities.org/fonts/Nunito-BoldItalic.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin: 0;
+    background-color: #08031a;
+    /* you can delete the line below if you'd prefer to not use an image */
+    background-size: 65px;
+    color: #fceaff;
+    background-image: var(--body-bg-image);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.rainbow {
+    background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet
+    );
+    background-size: 700% 100%;
+    animation: rainbow 15s linear infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0 0;
+    }
+    14.28% {
+        background-position: 100% 0;
+    }
+    28.57% {
+        background-position: 200% 0;
+    }
+    42.85% {
+        background-position: 300% 0;
+    }
+    57.14% {
+        background-position: 400% 0;
+    }
+    71.42% {
+        background-position: 500% 0;
+    }
+    85.71% {
+        background-position: 600% 0;
+    }
+    100% {
+        background-position: 700% 0;
+    }
+}
+/* below this line is CSS for the layout */
+
+/* this is a CSS comment
+to uncomment a line of CSS, remove the * and the /
+before and after the text */
+
+/* the "container" is what wraps your entire website */
+/* if you want something (like the header) to be Wider than
+the other elements, you will need to move that div outside
+of the container */
+#container {
+    max-width: 1100px;
+    /* this is the width of your layout! */
+    /* if you change the above value, scroll to the bottom
+and change the media query according to the comment! */
+    margin: 0 auto;
+    /* this centers the entire page */
+}
+
+/* the area below is for all links on your page
+EXCEPT for the navigation */
+#container a {
+    color: #ed64f5;
+    font-weight: bold;
+    /* if you want to remove the underline
+you can add a line below here that says:
+text-decoration:none; */
+}
+
+#header {
+    width: 100%;
+    background-color: #5e4e8c;
+    /* header color here! */
+    height: 150px;
+    /* this is only for a background image! */
+    /* if you want to put images IN the header, 
+you can add them directly to the <div id="header"></div> element! */
+    background-image: var(--header-image);
+    background-size: 100%;
+}
+
+/* navigation section!! */
+#navbar {
+    height: 40px;
+    background-color: #13092d;
+    /* navbar color */
+    width: 100%;
+}
+
+#navbar ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+#navbar li {
+    padding-top: 10px;
+}
+
+/* navigation links*/
+#navbar li a {
+    color: #ed64f5;
+    /* navbar text color */
+    font-weight: 800;
+    text-decoration: none;
+    /* this removes the underline */
+}
+
+/* navigation link when a link is hovered over */
+#navbar li a:hover {
+    color: #a49cba;
+    text-decoration: underline;
+}
+
+#flex {
+    display: flex;
+}
+
+/* this colors BOTH sidebars
+if you want to style them separately,
+create styles for #leftSidebar and #rightSidebar */
+aside {
+    background-color: #241445;
+    padding: 20px;
+    font-size: smaller;
+    /* this makes the sidebar text slightly smaller */
+}
+
+/* this is the color of the main content area,
+between the sidebars! */
+main {
+    background-color: #43256e;
+    flex: 1;
+    padding: 20px;
+    order: 2;
+}
+
+/* what's this "order" stuff about??
+allow me to explain!
+if you're using both sidebars, the "order" value
+tells the CSS the order in which to display them.
+left sidebar is 1, content is 2, and right sidebar is 3! */
+
+*/ #leftSidebar {
+    order: 1;
+}
+
+#rightSidebar {
+    order: 3;
+}
+
+footer {
+    background-color: #13092d;
+    /* background color for footer */
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    /* this centers the footer text */
+}
+
+h1,
+h2,
+h3 {
+    color: #ed64f5;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+strong {
+    /* this styles bold text */
+    color: #ed64f5;
+}
+
+/* this is just a cool box, it's the darker colored one */
+.box {
+    background-color: #13092d;
+    border: 1px solid #ed64f5;
+    padding: 10px;
+}
+
+/* CSS for extras */
+
+#topBar {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    font-size: smaller;
+    background-color: #13092d;
+}
+
+/* BELOW THIS POINT IS MEDIA QUERY */
+
+/* so you wanna change the width of your page? 
+by default, the container width is 900px.
+in order to keep things responsive, take your new height,
+and then subtrack it by 100. use this new number as the 
+"max-width" value below
+*/
+
+@media only screen and (max-width: 800px) {
+    #flex {
+        flex-wrap: wrap;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    /* the order of the items is adjusted here for responsiveness!
+since the sidebars would be too small on a mobile device.
+feel free to play around with the order!
+*/
+    main {
+        order: 1;
+    }
+
+    #leftSidebar {
+        order: 2;
+    }
+
+    #rightSidebar {
+        order: 3;
+    }
+
+    #navbar ul {
+        flex-wrap: wrap;
+    }
+}
+
+@keyframes wobble {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(10px);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes rainbowBorder {
+    0% {
+        border-color: red;
+    }
+    14% {
+        border-color: orange;
+    }
+    28% {
+        border-color: yellow;
+    }
+    42% {
+        border-color: green;
+    }
+    57% {
+        border-color: blue;
+    }
+    71% {
+        border-color: indigo;
+    }
+    85% {
+        border-color: violet;
+    }
+    100% {
+        border-color: red;
+    }
+}
+
+.wobbly-text {
+    animation: rainbowBorder 3s infinite, wobble 0.5s infinite;
+}
+
+.rainbow-letter {
+    /* user styles */
+
+    /* styles are what change the color and sizes of stuff on your site. */
+
+    /* these are variables that are being used in the code
+  these tended to confuse some people, so I only kept 
+  the images as variables */
+
+    :root {
+        --header-image: url("./images/wp.jpeg");
+        --body-bg-image: url("https://sadhost.neocities.org/images/tiles/purplesky.gif");
+
+        /* colors */
+        --content: #43256e;
+    }
+
+    /* if you have the URL of a font, you can set it below */
+    /* feel free to delete this if it's not your vibe */
+
+    /* this seems like a lot for just one font and I would have to agree 
+  but I wanted to include an example of how to include a custom font.
+  If you download a font file you can upload it onto your Neocities
+  and then link it! Many fonts have separate files for each style
+  (bold, italic, etc. T_T) which is why there are so many!
+  
+  */
+
+    @font-face {
+        font-family: Nunito;
+        src: url("https://sadhost.neocities.org/fonts/Nunito-Regular.ttf");
+    }
+
+    @font-face {
+        font-family: Nunito;
+        src: url("https://sadhost.neocities.org/fonts/Nunito-Bold.ttf");
+        font-weight: bold;
+    }
+
+    @font-face {
+        font-family: Nunito;
+        src: url("https://sadhost.neocities.org/fonts/Nunito-Italic.ttf");
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: Nunito;
+        src: url("https://sadhost.neocities.org/fonts/Nunito-BoldItalic.ttf");
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    body {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        margin: 0;
+        background-color: #08031a;
+        /* you can delete the line below if you'd prefer to not use an image */
+        background-size: 65px;
+        color: #fceaff;
+        background-image: var(--body-bg-image);
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .rainbow {
+        background: linear-gradient(
+            90deg,
+            red,
+            orange,
+            yellow,
+            green,
+            blue,
+            indigo,
+            violet
+        );
+        background-size: 700% 100%;
+        animation: rainbow 15s linear infinite;
+    }
+
+    @keyframes rainbow {
+        0% {
+            background-position: 0 0;
+        }
+        14.28% {
+            background-position: 100% 0;
+        }
+        28.57% {
+            background-position: 200% 0;
+        }
+        42.85% {
+            background-position: 300% 0;
+        }
+        57.14% {
+            background-position: 400% 0;
+        }
+        71.42% {
+            background-position: 500% 0;
+        }
+        85.71% {
+            background-position: 600% 0;
+        }
+        100% {
+            background-position: 700% 0;
+        }
+    }
+    /* below this line is CSS for the layout */
+
+    /* this is a CSS comment
+  to uncomment a line of CSS, remove the * and the /
+  before and after the text */
+
+    /* the "container" is what wraps your entire website */
+    /* if you want something (like the header) to be Wider than
+  the other elements, you will need to move that div outside
+  of the container */
+    #container {
+        max-width: 1100px;
+        /* this is the width of your layout! */
+        /* if you change the above value, scroll to the bottom
+  and change the media query according to the comment! */
+        margin: 0 auto;
+        /* this centers the entire page */
+    }
+
+    /* the area below is for all links on your page
+  EXCEPT for the navigation */
+    #container a {
+        color: #ed64f5;
+        font-weight: bold;
+        /* if you want to remove the underline
+  you can add a line below here that says:
+  text-decoration:none; */
+    }
+
+    #header {
+        width: 100%;
+        background-color: #5e4e8c;
+        /* header color here! */
+        height: 150px;
+        /* this is only for a background image! */
+        /* if you want to put images IN the header, 
+  you can add them directly to the <div id="header"></div> element! */
+        background-image: var(--header-image);
+        background-size: 100%;
+    }
+
+    /* navigation section!! */
+    #navbar {
+        height: 40px;
+        background-color: #13092d;
+        /* navbar color */
+        width: 100%;
+    }
+
+    #navbar ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        justify-content: space-evenly;
+    }
+
+    #navbar li {
+        padding-top: 10px;
+    }
+
+    /* navigation links*/
+    #navbar li a {
+        color: #ed64f5;
+        /* navbar text color */
+        font-weight: 800;
+        text-decoration: none;
+        /* this removes the underline */
+    }
+
+    /* navigation link when a link is hovered over */
+    #navbar li a:hover {
+        color: #a49cba;
+        text-decoration: underline;
+    }
+
+    #flex {
+        display: flex;
+    }
+
+    /* this colors BOTH sidebars
+  if you want to style them separately,
+  create styles for #leftSidebar and #rightSidebar */
+    aside {
+        background-color: #241445;
+        padding: 20px;
+        font-size: smaller;
+        /* this makes the sidebar text slightly smaller */
+    }
+
+    /* this is the color of the main content area,
+  between the sidebars! */
+    main {
+        background-color: #43256e;
+        flex: 1;
+        padding: 20px;
+        order: 2;
+    }
+
+    /* what's this "order" stuff about??
+  allow me to explain!
+  if you're using both sidebars, the "order" value
+  tells the CSS the order in which to display them.
+  left sidebar is 1, content is 2, and right sidebar is 3! */
+
+    */ #leftSidebar {
+        order: 1;
+    }
+
+    #rightSidebar {
+        order: 3;
+    }
+
+    footer {
+        background-color: #13092d;
+        /* background color for footer */
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        text-align: center;
+        /* this centers the footer text */
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: #ed64f5;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    strong {
+        /* this styles bold text */
+        color: #ed64f5;
+    }
+
+    /* this is just a cool box, it's the darker colored one */
+    .box {
+        background-color: #13092d;
+        border: 1px solid #ed64f5;
+        padding: 10px;
+    }
+
+    /* CSS for extras */
+
+    #topBar {
+        width: 100%;
+        height: 30px;
+        padding: 10px;
+        font-size: smaller;
+        background-color: #13092d;
+    }
+
+    /* BELOW THIS POINT IS MEDIA QUERY */
+
+    /* so you wanna change the width of your page? 
+  by default, the container width is 900px.
+  in order to keep things responsive, take your new height,
+  and then subtrack it by 100. use this new number as the 
+  "max-width" value below
+  */
+
+    @media only screen and (max-width: 800px) {
+        #flex {
+            flex-wrap: wrap;
+        }
+
+        aside {
+            width: 100%;
+        }
+
+        /* the order of the items is adjusted here for responsiveness!
+  since the sidebars would be too small on a mobile device.
+  feel free to play around with the order!
+  */
+        main {
+            order: 1;
+        }
+
+        #leftSidebar {
+            order: 2;
+        }
+
+        #rightSidebar {
+            order: 3;
+        }
+
+        #navbar ul {
+            flex-wrap: wrap;
+        }
+    }
+
+    @keyframes wobble {
+        0% {
+            transform: translateX(0);
+        }
+        25% {
+            transform: translateX(10px);
+        }
+        50% {
+            transform: translateX(0);
+        }
+        75% {
+            transform: translateX(-10px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes rainbowBorder {
+        0% {
+            border-color: red;
+        }
+        14% {
+            border-color: orange;
+        }
+        28% {
+            border-color: yellow;
+        }
+        42% {
+            border-color: green;
+        }
+        57% {
+            border-color: blue;
+        }
+        71% {
+            border-color: indigo;
+        }
+        85% {
+            border-color: violet;
+        }
+        100% {
+            border-color: red;
+        }
+    }
+
+    .wobbly-text {
+        animation: rainbowBorder 3s infinite, wobble 0.5s infinite;
+    }
+
+    .rainbow-letter {
+        animation: colorCycle 1s infinite alternate;
+    }
+
+    @keyframes colorCycle {
+        0% {
+            color: red;
+        }
+        14% {
+            color: orange;
+        }
+        28% {
+            color: yellow;
+        }
+        42% {
+            color: green;
+        }
+        57% {
+            color: blue;
+        }
+        71% {
+            color: indigo;
+        }
+        85% {
+            color: violet;
+        }
+        100% {
+            color: red;
+        }
+    }
+
+    animation: colorCycle 1s infinite alternate;
+}
+
+@keyframes colorCycle {
+    0% {
+        color: red;
+    }
+    14% {
+        color: orange;
+    }
+    28% {
+        color: yellow;
+    }
+    42% {
+        color: green;
+    }
+    57% {
+        color: blue;
+    }
+    71% {
+        color: indigo;
+    }
+    85% {
+        color: violet;
+    }
+    100% {
+        color: red;
+    }
+}
+
+.container-grid {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+}
+
+p {
+    font-size: 20px;
+}
+
+/* Define the spinning animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg); /* Start at 0 degrees */
+    }
+    100% {
+        transform: rotate(360deg); /* Rotate to 360 degrees */
+    }
+}
+
+/* Apply the spinning effect to the images */
+.spin-image {
+    animation: spin 5s linear infinite; /* 5 seconds to complete one full rotation */
+}
+
+/* Define the spinning animation */
+@keyframes size {
+    0% {
+        transform: scale(1.2); /* Start at 0 degrees */
+    }
+    100% {
+        transform: scale(0.8); /* Rotate to 360 degrees */
+    }
+}
+
+/* Apply the spinning effect to the images */
+.size-image {
+    animation: size 5s linear infinite; /* 5 seconds to complete one full rotation */
+}
+
+.move-around {
+    position: relative;
+    animation: example 5s linear infinite;
+}
+
+@keyframes example {
+    0% {
+        background-color: red;
+        left: 10vw;
+        top: 10vh;
+    }
+
+    25% {
+        background-color: yellow;
+        left: 80vw;
+        top: 10vh;
+    }
+
+    40% {
+        background-color: blue;
+        left: 10vw;
+        top: 80vh;
+    }
+
+    60% {
+        background-color: green;
+        left: 80vw;
+        top: 80vh;
+    }
+
+    100% {
+        background-color: red;
+        left: 10vw;
+        top: 10vh;
+    }
+}
+
+.rainbow-offset {
+    position: fixed;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: -4px 4px #ef3550, -8px 8px #f48fb1, -12px 12px #7e57c2,
+        -16px 16px #2196f3, -20px 20px #26c6da, -24px 24px #43a047,
+        -28px 28px #eeff41, -32px 32px #f9a825, -36px 36px #ff5722;
+}
+
+.rainbow-text {
+    background-image: linear-gradient(
+        to left,
+        violet,
+        indigo,
+        blue,
+        green,
+        yellow,
+        orange,
+        red
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.text-wave {
+    animation: wave-text 1.4s ease-in-out infinite;
+}
+.text span:nth-child(1) {
+    animation-delay: 0s;
+}
+.text span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.text span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+.text span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+.text span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+.text span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+.text span:nth-child(7) {
+    animation-delay: 0.6s;
+}
+@keyframes wave-text {
+    0% {
+        transform: translateY(0rem);
+    }
+    55% {
+        transform: translateY(-1.5rem);
+    }
+    100% {
+        transform: translateY(0rem);
+    }
+}
+
+.neon-text {
+    color: #fff;
+    text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e,
+        0 0 40px #ff005e, 0 0 80px #ff005e;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e,
+            0 0 40px #ff005e, 0 0 80px #ff005e;
+    }
+    100% {
+        text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff,
+            0 0 80px #00d4ff, 0 0 160px #00d4ff;
+    }
+}

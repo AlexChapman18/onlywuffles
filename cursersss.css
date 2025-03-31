@@ -1,0 +1,52 @@
+body {
+    cursor: none; /* Hide default cursor */
+}
+
+.cursor {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: colorCycle 1s infinite, scalePulse 0.5s infinite alternate;
+    will-change: transform;
+}
+
+/* Add a rainbow color change */
+@keyframes colorCycle {
+    0% {
+        background-color: red;
+    }
+    14% {
+        background-color: orange;
+    }
+    28% {
+        background-color: yellow;
+    }
+    42% {
+        background-color: green;
+    }
+    57% {
+        background-color: blue;
+    }
+    71% {
+        background-color: indigo;
+    }
+    85% {
+        background-color: violet;
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+/* Pulsing scale effect */
+@keyframes scalePulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
